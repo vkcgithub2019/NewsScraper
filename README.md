@@ -10,3 +10,6 @@ cheerio
 axios
 
 To deploy to Heroku, mlab provision must be setup first.
+
+Link to my github: https://vkcgithub2019.github.io/NewsScraper/
+Link to Heroku: https://dry-shelf-08779.herokuapp.com/NewsScraper
