@@ -31,7 +31,7 @@ $(document).on("click", "p", function() {
       $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
       $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
-
+      $("#notes").append("<button data-id='" + data._id + "' id='deletenote'>Delete Note</button>");
       // If there's a note in the article
       if (data.note) {
         // Place the title of the note in the title input
@@ -80,12 +80,7 @@ $(document).on("click", "#deletenote", function() {
   $.ajax({
     method: "DELETE",
     url: "/articles/" + thisId,
-    data: {
-      // Value taken from title input
-      title: $("#titleinput").val(),
-      // Value taken from note textarea
-      body: $("#bodyinput").val()
-    }
+    
   })
     // With that done
     .then(function(data) {
