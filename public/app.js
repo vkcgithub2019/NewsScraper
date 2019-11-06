@@ -1,3 +1,8 @@
+
+
+
+
+
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
@@ -32,6 +37,8 @@ $(document).on("click", "p", function() {
       // A button to submit a new note, with the id of the article saved to it
       $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
       $("#notes").append("<button data-id='" + data._id + "' id='deletenote'>Delete Note</button>");
+     
+      
       // If there's a note in the article
       if (data.note) {
         // Place the title of the note in the title input
@@ -41,6 +48,21 @@ $(document).on("click", "p", function() {
       }
     });
 });
+
+// scrape new stories or headlines
+$("#re-scrape").on("click", function(event) {
+  
+  $.ajax("/api/scrape", {
+    type: "GET"
+  }).then(
+    function() {
+      //update the page 
+      location.reload();
+    }
+  );
+});
+
+
 
 // When you click the savenote button
 $(document).on("click", "#savenote", function() {
