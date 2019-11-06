@@ -76,7 +76,7 @@ $(document).on("click", "#deletenote", function() {
   // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
 
-  // Run a POST request to change the note, using what's entered in the inputs
+  // Run a DELETE request to change the note, using what's entered in the inputs
   $.ajax({
     method: "DELETE",
     url: "/articles/" + thisId,
