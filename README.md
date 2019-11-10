@@ -10,4 +10,4 @@ axios
 
 To deploy to Heroku, mlab provision must be setup first.
 
-Link to Heroku: https://dry-shelf-08779.herokuapp.com/NewsScraper
+Link to Heroku: https://dry-shelf-08779.herokuapp.com
